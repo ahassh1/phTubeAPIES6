@@ -40,21 +40,32 @@ const displayVideos =(videos)=>{
     // console.log(video)
     const videoDiv = document.createElement('div')
     videoDiv.innerHTML=`
-   
+
+    <!-- //card section design start -->
     <div class="card bg-base-100 shadow-sm">
-  <figure>
-    <img
-      src="${video.thumbnail}"
-      alt="Shoes" />
-  </figure>
-  <div class="card-body">
-    <h2 class="card-title">${video.title}</h2>
-    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-    <div class="card-actions justify-end">
-      <button class="btn btn-primary">Buy Now</button>
+      <figure class="relative">
+        <img class="w-full h-[160px] object-cover"
+          src="${video.thumbnail}"
+          alt="Shoes" />
+          <span class="absolute bottom-2 right-3 bg-black text-white px-2 rounded-sm text-xs">3hrs 56 min ago</span>
+      </figure>
+      <div class="flex px-0 gap-3 py-5">
+        <div class="profile">
+          <div class="avatar">
+            <div class="ring-primary ring-offset-base-100 w-7 rounded-full ring ring-offset-2">
+              <img src="${video.authors[0].profile_picture}" />
+            </div>
+          </div>
+        </div>
+        <div class="intro">
+          <h1 class="text-xl font-bold">Building a Winning UX Strategy Using the Kano Model</h1>
+          <p class="text-sm text-gray-400 font-semibold flex gap-1 text-[15px] my-1 ">${video.authors[0].profile_name}
+          <img class="w-5 h-5" src="https://img.icons8.com/?size=64&id=eZo3c88c63il&format=png" alt="">
+        </p>
+        <p class="text-sm text-gray-400 font-semibold" >${video.others.views}</p>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
     `
     videoContainer.append(videoDiv)
@@ -85,3 +96,21 @@ loadVideos()
 //   },
 //   "description": "Ethan Clark's 'Colors of the Wind' is a vibrant musical exploration that captivates listeners with its rich, expressive melodies and uplifting rhythm. With 233K views, this song is a celebration of nature's beauty and human connection, offering a soothing and enriching experience for fans of heartfelt, nature-inspired music."
 // }
+
+
+
+
+{/* <div class="card bg-base-100 shadow-sm">
+<figure>
+  <img
+    src="${video.thumbnail}"
+    alt="Shoes" />
+</figure>
+<div class="card-body">
+  <h2 class="card-title">${video.title}</h2>
+  <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+  <div class="card-actions justify-end">
+    <button class="btn btn-primary">Buy Now</button>
+  </div>
+</div>
+</div> */}
